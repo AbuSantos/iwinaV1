@@ -11,9 +11,9 @@ const NewProject = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const openModal = () =>{ 
         console.log("modal is open");
-        
-        setIsOpen(true)
+        // setIsOpen(true)
     };
+  
     const closeModal = () => setIsOpen(false);
     const [name, setName] = useState("");
 

@@ -3,7 +3,7 @@ import { FC } from "react"
 
 const buttonClasses = cva(
     // this is the defalt classes
-    [
+  [
     "rounded-3xl",
     "font-bold",
     "hover:scale-110",
@@ -11,10 +11,11 @@ const buttonClasses = cva(
     "transition",
     "duration-200",
     "ease-in-out",
-],
+  ],
     {
         //variants is the object type, intents implements the specific value 
-        variants: {
+        variants: 
+        {
           intent: {
             primary: [
               "bg-violet-500",
@@ -23,7 +24,8 @@ const buttonClasses = cva(
               "hover:bg-violet-600",
             ],
     
-            secondary: [
+            secondary:
+             [
               "bg-white",
               "text-black",
               "border-gray-400",
@@ -32,9 +34,15 @@ const buttonClasses = cva(
               "border-2",
               "border-gray-800",
             ],
-            text: ["bg-transparent", "text-black", "hover:bg-gray-100"],
+            text:
+             [
+              "bg-transparent",
+               "text-black", 
+               "hover:bg-gray-100"
+            ],
           },
-          size: {
+          size: 
+          {
             small: ["text-md", "py-1", "px-2"],
             medium: ["text-lg", "px-6", "py-2"],
             large: ["text-xlg", "px-8", "py-4"],
@@ -45,8 +53,8 @@ const buttonClasses = cva(
             intent: "primary",
             size: "medium",
           }
-}
-)
+      }
+    )
 
 export interface ButtonProps
     extends React.HTMLAttributes<HTMLButtonElement>,
@@ -54,9 +62,11 @@ export interface ButtonProps
 
 
 const Button: FC<ButtonProps> =({children, intent, size, className,...props})=>{
-return(
-    <button className={buttonClasses({intent, size, className, ...props})}>{children}</button>
-)
+  return(
+    <button className={buttonClasses({intent, size, className, ...props})}>
+      {children}
+    </button>
+  )
 }
 
 export default Button
