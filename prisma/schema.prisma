@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// mysql://root:saturda1z@localhost:3306/DATABASE
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// uuid=universally unique identifier
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  email     String    @unique
+  firstName String?
+  lastName  String?
+  password  String
+  projects  Project[]
+  tasks     Task[]
+}
+
+// the owner field- type user and related to A user ID and it maps to a owner ID
+// the "?" means its optional
+model Project {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name    String
+  ownerId String
+  owner   User   @relation(fields: [ownerId], references: [id])
+  tasks   Task[]
+
+  description String?
+  due         DateTime?
+  deleted     Boolean   @default(false)
+
+  @@unique([ownerId, name]) //cant have two projects with the same name
+  @@index([ownerId, id])
+}
+
+enum TASK_STATUS {
+  NOT_STARTED
+  STARTED
+  COMPLETED
+}
+
+model Task {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  ownerId String
+  owner   User   @relation(fields: [ownerId], references: [id])
+
+  status    TASK_STATUS @default(NOT_STARTED)
+  name      String
+  projectId String
+  project   Project     @relation(fields: [projectId], references: [id])
+
+  description String?
+  due         DateTime?
+  deleted     Boolean   @default(false)
+
+  @@index([ownerId])
+}
