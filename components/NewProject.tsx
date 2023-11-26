@@ -10,8 +10,8 @@ Modal.setAppElement("#modal");
 const NewProject = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const openModal = () =>{ 
-        console.log("modal is open");
-        // setIsOpen(true)
+        // console.log("modal is open");
+        setIsOpen(true)
     };
   
     const closeModal = () => setIsOpen(false);
@@ -25,7 +25,7 @@ const NewProject = () => {
     
   return (
     <div className="px-6 py-8 hover:scale-105 transition-all ease-in-out duration-200 flex justify-center items-center">
-        <button  onClick={openModal }>+ New Project</button>
+        <button  onClick={()=>openModal() }>+ New Project</button>
         <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
