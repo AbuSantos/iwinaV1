@@ -9,15 +9,12 @@ Modal.setAppElement("#modal");
 
 const NewProject = () => {
     const [modalIsOpen, setIsOpen] = useState(false);
-    const openModal = () =>{ 
-        // console.log("modal is open");
-        setIsOpen(true)
-    };
+    const openModal = () =>setIsOpen(true)
   
     const closeModal = () => setIsOpen(false);
     const [name, setName] = useState("");
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e:any) => {
         e.preventDefault();
         await createNewProject(name)
         closeModal();

@@ -585,9 +585,6 @@
 	// Controls the letter spacing in pixels.
 	"editor.letterSpacing": 0,
 
-	// Enables the Code Action lightbulb in the editor.
-	"editor.lightbulb.enabled": true,
-
 	// Controls the line height. 
 	//  - Use 0 to automatically compute the line height from the font size.
 	//  - Values between 0 and 8 will be used as a multiplier with the font size.
@@ -666,7 +663,7 @@
 	"editor.multiDocumentOccurrencesHighlight": false,
 
 	// Controls whether the editor should highlight semantic symbol occurrences.
-	"editor.occurrencesHighlight": true,
+	"editor.occurrencesHighlight": "singleFile",
 
 	// Controls whether a border should be drawn around the overview ruler.
 	"editor.overviewRulerBorder": true,
@@ -1040,7 +1037,7 @@
 	"editor.useTabStops": true,
 
 	// Controls whether completions should be computed based on words in the document.
-	"editor.wordBasedSuggestions": true,
+	"editor.wordBasedSuggestions": "matchingDocuments",
 
 	// Controls from which documents word based completions are computed.
 	//  - currentDocument: Only suggest words from the active document.
@@ -5382,7 +5379,7 @@
 	"[python]":  {
 		"diffEditor.ignoreTrimWhitespace": false,
 		"editor.formatOnType": true,
-		"editor.wordBasedSuggestions": false
+		"editor.wordBasedSuggestions": "off"
 	},
 
 	// Configure settings to be overridden for the scss language.
@@ -7151,5 +7148,6 @@
 
 	// If set to 'true', the extension will disable the project detection.
 	"vsicons.projectDetection.disableDetect": false,
+	"workbench.editor.tabActionLocation": "right",
 
 }

@@ -4,6 +4,8 @@ import { TASK_STATUS } from "@prisma/client";
 import { cookies } from "next/headers";
 import Button from "./Button";
 import Card from "./Card";
+import Link from "next/link";
+
 
 const getData = async()=>{
     const user = await getUserFromCookie(cookies());
@@ -34,15 +36,15 @@ const TaskCard = async ({tasks, title})=>{
               <span className="text-3xl text-gray-600">{title}</span>
             </div>
             <div>
-              <Button intent="text" className="text-violet-600">
+              <Link className="text-violet-600"  href={`/task`}>
                 + Create New
-              </Button>
+              </Link>
             </div>
           </div>
           <div>
             {data && data.length ? (
               <div>
-                {data.map((task) => (
+                {data.map((task:any) => (
                   <div className="py-2 ">
                     <div>
                       <span className="text-gray-800">{task.name}</span>

@@ -26,7 +26,28 @@ export const signin = async (user) => {
   return fetcher({ url: "/api/signin", method: "POST", body: user});
 };
 
+export const createNewTask = (task) => {
+  return fetcher({
+    url:"/api/task",
+    method:"POST",
+    body:{
+      task: {
+        // Include other properties like projectId, description, due, etc.
+        name: task?.name,
+        projectId: task?.projectId,
+        description: task?.description,
+        due: task?.due,
+      },
+    },
+    json: true,
+  });
+
+};
 
 export const createNewProject =(name)=>{
   return fetcher({ url: "/api/project", method: "POST", body:{name}, json: true})
+}
+
+export const updateTaskStatus =(taskId, status)=>{
+  return fetcher({url:"/api/updateStatus", method:"PUT", body:{taskId, status}, json:true})
 }

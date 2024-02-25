@@ -15,6 +15,7 @@ const formatDate =(date:any)=> new Date(date).toLocaleDateString("en-us",{
     month: "short",
     day: "numeric",
 });
+
 const ProjectCard: FC<{project:ProjectWithTasks}>= ({project})=>{
   
 
