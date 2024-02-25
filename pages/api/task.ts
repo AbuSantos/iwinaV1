@@ -7,15 +7,7 @@ export default async function handler (req,res){
     const { name, projectId, description, due } = req.body.task;
     const user = await validateJWT(req.cookies[process.env.COOKIE_NAME]);
     
-    // const project = await db.project.findUnique({
-    //   where: {
-    //     id: req.body?.projectId, 
-    //   },
-    // })
 
-    // if (!project) {
-    //   return res.status(404).json({ error: "Project not found" });
-    // }
 
   await db.task.create({
         data:({
@@ -24,7 +16,6 @@ export default async function handler (req,res){
           description: description,
           due: due,
           name: name,
-     
           owner: {
             connect: { id: user.id },
           },
@@ -34,6 +25,5 @@ export default async function handler (req,res){
         }),
       });
     res.json({ data: { message: 'ok' } });
-  // }
 
 }
