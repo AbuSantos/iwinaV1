@@ -28,17 +28,16 @@ const NewTask = () => {
         } catch (error) {
             console.error('Error creating task:', error);
         }
-        
       }
 
-      const handleChange = (e) => {
-        const { name, value } = e.target;
+      // const handleChange = (e) => {
+      //   const { name, value } = e.target;
 
-        setTaskData((prevData) => ({
-          ...prevData,
-          [name]: value,
-        }));
-      };
+      //   setTaskData((prevData) => ({
+      //     ...prevData,
+      //     [name]: value,
+      //   }));
+      // };
 
       return(
         <div  className="px-6 py-8 hover:scale-105 transition-all ease-in-out duration-200 flex justify-center items-center">

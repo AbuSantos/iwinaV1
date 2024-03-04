@@ -31,7 +31,7 @@ const registerContent = {
 
     const router = useRouter();
 
-    const handleSubmit= async(e)=> {
+    const handleSubmit= async(e:any)=> {
         e.preventDefault()
 
         try {
@@ -53,7 +53,7 @@ const registerContent = {
     const content = mode === 'register' ? registerContent : signinContent
 
     return (
-        <Card>
+        <Card className={""}>
           <div className="w-full">
             <div className="text-center">
               <h2 className="text-3xl mb-2">{content.header}</h2>
@@ -128,7 +128,7 @@ const registerContent = {
                   </span>
                 </div>
                 <div>
-                  <Button type="submit" intent="secondary">
+                  <Button intent="secondary">
                     {content.buttonText}
                   </Button>
                 </div>
