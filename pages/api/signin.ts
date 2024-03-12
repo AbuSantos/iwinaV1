@@ -15,7 +15,6 @@ export default async function signin(req: NextApiRequest, res: NextApiResponse) 
     
     if (isUser) {
       const jwt = await createJwt(user);
-
       res.setHeader(
         "Set-Cookie",
         serialize(process.env.COOKIE_NAME, jwt, {

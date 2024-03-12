@@ -1,6 +1,6 @@
 "use client"
 import { useRouter } from "next/navigation"
-import { useCallback, useState } from "react"
+import { ChangeEvent, ReactElement, useCallback, useState } from "react"
 import Button from "./Button"
 import Input from "./Input"
 import Card from "./Card"
@@ -23,7 +23,12 @@ const registerContent = {
     buttonText: "Sign In",
   };
 
-  const intial = {email:'', password:'', firstName:'',lastName:''}
+  const intial = {
+    email:'', 
+    password:'', 
+    firstName:'',
+    lastName:''
+  }
 
   const  AuthForm =({mode})=>{
     const [formState, setFormState] = useState({...intial});
@@ -71,7 +76,7 @@ const registerContent = {
                       placeholder="First Name"
                       value={formState.firstName}
                       className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
-                      onChange={(e) =>
+                      onChange={(e:ChangeEvent<HTMLInputElement>) =>
                         setFormState((s) => ({ ...s, firstName: e.target.value }))
                       }
                     />
@@ -83,7 +88,7 @@ const registerContent = {
                       placeholder="Last Name"
                       value={formState.lastName}
                       className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
-                      onChange={(e) =>
+                      onChange={(e:ChangeEvent<HTMLInputElement>) =>
                         setFormState((s) => ({ ...s, lastName: e.target.value }))
                       }
                     />
@@ -98,7 +103,7 @@ const registerContent = {
                   placeholder="Email"
                   value={formState.email}
                   className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
-                  onChange={(e) =>
+                  onChange={(e:ChangeEvent<HTMLInputElement>) =>
                     setFormState((s) => ({ ...s, email: e.target.value }))
                   }
                 />
@@ -111,7 +116,7 @@ const registerContent = {
                   type="password"
                   placeholder="Password"
                   className="border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full"
-                  onChange={(e) =>
+                  onChange={(e:ChangeEvent<HTMLInputElement>) =>
                     setFormState((s) => ({ ...s, password: e.target.value }))
                   }
                 />

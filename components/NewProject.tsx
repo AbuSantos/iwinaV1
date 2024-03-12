@@ -1,6 +1,6 @@
 "use client";
 import { createNewProject } from "@/lib/api";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import Modal from "react-modal";
 import Button from "./Button";
 import Input from "./Input";
@@ -32,11 +32,12 @@ const NewProject = () => {
         <h1 className="text-3xl mb-6">New Project</h1>
         <form className="flex items-center" onSubmit={handleSubmit}>
           <Input
+            className={""}
             placeholder="project name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e:ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
           />
-          <Button type="submit">Create</Button>
+          <Button>Create</Button>
         </form>
       </Modal>
     </div>

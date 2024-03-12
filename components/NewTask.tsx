@@ -60,9 +60,7 @@ const NewTask = () => {
                           onChange={(e) =>
                           setFormData((s) => ({ ...s, name: e.target.value }))
                         } 
-                        
                     />
-                     
                         <textarea
                           className={clsx(
                               "border-solid border-gray border-2 px-6 py-2 text-lg rounded-3xl w-full",

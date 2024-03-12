@@ -4051,9 +4051,6 @@
 	// Controls whether bold text in the terminal will always use the "bright" ANSI color variant.
 	"terminal.integrated.drawBoldTextInBrightColors": true,
 
-	// Controls whether the terminal bell is enabled. This shows up as a visual bell next to the terminal's name.
-	"terminal.integrated.enableBell": false,
-
 	// Whether to enable file links in terminals. Links can be slow when working on a network drive in particular because each file link is verified against the file system. Changing this will take effect only in new terminals.
 	//  - off: Always off.
 	//  - on: Always on.
@@ -5405,147 +5402,9 @@
 		"diffEditor.ignoreTrimWhitespace": false
 	},
 
-	// Plays a sound when a chat request is made.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.chatRequestSent": "off",
-
-	// Plays a sound on loop while the response is pending.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.chatResponsePending": "auto",
-
-	// Plays a sound on loop while the response has been received.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.chatResponseReceived": "off",
-
-	// Plays a sound when a feature is cleared (for example, the terminal, debug console, or output channel). When this is disabled, an aria alert will announce 'Cleared'.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.clear": "off",
-
-	// Whether or not position changes should be debounced
-	"audioCues.debouncePositionChanges": false,
-
-	// Plays a sound when the focus moves to a deleted line in Accessible Diff Viewer mode or to the next/previous change.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.diffLineDeleted": "auto",
-
-	// Plays a sound when the focus moves to an inserted line in Accessible Diff Viewer mode or to the next/previous change.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.diffLineInserted": "auto",
-
-	// Plays a sound when the focus moves to a modified line in Accessible Diff Viewer mode or to the next/previous change.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.diffLineModified": "auto",
-
 	// Deprecated. Use the specific setting for each audio cue instead (`audioCues.*`).
 	// 
 	"audioCues.enabled": null,
-
-	// Plays a sound when a file or notebook is formatted. Also see `accessibility.alert.format`
-	//  - userGesture: Plays the audio cue when a user explicitly formats a file.
-	//  - always: Plays the audio cue whenever a file is formatted, including if it is set to format on save, type, or, paste, or run of a cell.
-	//  - never: Never plays the audio cue.
-	"audioCues.format": "never",
-
-	// Plays a sound when the active line has a breakpoint.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.lineHasBreakpoint": "auto",
-
-	// Plays a sound when the active line has an error.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.lineHasError": "auto",
-
-	// Plays a sound when the active line has a folded area that can be unfolded.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.lineHasFoldedArea": "auto",
-
-	// Plays a sound when the active line has an inline suggestion.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.lineHasInlineSuggestion": "auto",
-
-	// Plays a sound when the active line has a warning.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.lineHasWarning": "off",
-
-	// Plays a sound when trying to read a line with inlay hints that has no inlay hints.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.noInlayHints": "auto",
-
-	// Plays a sound when a notebook cell execution is successfully completed.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.notebookCellCompleted": "auto",
-
-	// Plays a sound when a notebook cell execution fails.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.notebookCellFailed": "auto",
-
-	// Plays a sound when the debugger stopped on a breakpoint.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.onDebugBreak": "auto",
-
-	// Plays a sound when a file is saved. Also see `accessibility.alert.save`
-	//  - userGesture: Plays the audio cue when a user explicitly saves a file.
-	//  - always: Plays the audio cue whenever a file is saved, including auto save.
-	//  - never: Never plays the audio cue.
-	"audioCues.save": "never",
-
-	// Plays a sound when a task is completed.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.taskCompleted": "auto",
-
-	// Plays a sound when a task fails (non-zero exit code).
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.taskFailed": "auto",
-
-	// Plays a sound when a terminal command fails (non-zero exit code).
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.terminalCommandFailed": "auto",
-
-	// Plays a sound when terminal Quick Fixes are available.
-	//  - auto: Enable audio cue when a screen reader is attached.
-	//  - on: Enable audio cue.
-	//  - off: Disable audio cue.
-	"audioCues.terminalQuickFix": "auto",
-
-	// The volume of the audio cues in percent (0-100).
-	"audioCues.volume": 70,
 
 	// The name under which the remote tunnel access is registered. If not set, the host name is used.
 	"remote.tunnels.access.hostNameOverride": "",
@@ -5611,18 +5470,6 @@
 
 	// Restores the ports you forwarded in a workspace.
 	"remote.restoreForwardedPorts": true,
-
-	// When in screen reader mode, alerts when a file or notebook cell is formatted. Note that this will be ignored when `audioCues.format` is enabled.
-	//  - userGesture: Alerts when a file is formatted via user gesture.
-	//  - always: Alerts whenever is a file is formatted, including auto save, on cell execution, and more.
-	//  - never: Never alerts.
-	"accessibility.alert.format": "always",
-
-	// When in screen reader mode, alerts when a file is saved. Note that this will be ignored when `audioCues.save` is enabled.
-	//  - userGesture: Alerts when a file is saved via user gesture.
-	//  - always: Alerts whenever is a file is saved, including auto save.
-	//  - never: Never alerts.
-	"accessibility.alert.save": "always",
 
 	// Provide information about actions that can be taken in the comment widget or in a file which contains comments.
 	"accessibility.verbosity.comments": true,
@@ -5881,7 +5728,7 @@
 	"git.ignoreWindowsGit27Warning": false,
 
 	// Controls when to show commit message input validation.
-	"git.inputValidation": "warn",
+	"git.inputValidation": true,
 
 	// Controls the commit message length threshold for showing a warning.
 	"git.inputValidationLength": 72,
@@ -7149,5 +6996,79 @@
 	// If set to 'true', the extension will disable the project detection.
 	"vsicons.projectDetection.disableDetect": false,
 	"workbench.editor.tabActionLocation": "right",
+	"accessibility.signals.sounds.volume": 70,
+	"accessibility.signals.debouncePositionChanges": false,
+	"accessibility.signals.lineHasError": {
+		"sound": "auto"
+	},
+	"accessibility.signals.lineHasWarning": {
+		"sound": "off"
+	},
+	"accessibility.signals.lineHasFoldedArea": {
+		"sound": "auto"
+	},
+	"accessibility.signals.lineHasBreakpoint": {
+		"sound": "auto"
+	},
+	"accessibility.signals.lineHasInlineSuggestion": {
+		"sound": "auto"
+	},
+	"accessibility.signals.terminalQuickFix": {
+		"sound": "auto"
+	},
+	"accessibility.signals.onDebugBreak": {
+		"sound": "auto"
+	},
+	"accessibility.signals.noInlayHints": {
+		"sound": "auto"
+	},
+	"accessibility.signals.taskCompleted": {
+		"sound": "auto"
+	},
+	"accessibility.signals.taskFailed": {
+		"sound": "auto"
+	},
+	"accessibility.signals.terminalCommandFailed": {
+		"sound": "auto"
+	},
+	"accessibility.signals.notebookCellCompleted": {
+		"sound": "auto"
+	},
+	"accessibility.signals.notebookCellFailed": {
+		"sound": "auto"
+	},
+	"accessibility.signals.diffLineInserted": {
+		"sound": "auto"
+	},
+	"accessibility.signals.diffLineDeleted": {
+		"sound": "auto"
+	},
+	"accessibility.signals.diffLineModified": {
+		"sound": "auto"
+	},
+	"accessibility.signals.chatRequestSent": {
+		"sound": "off"
+	},
+	"accessibility.signals.chatResponseReceived": {
+		"sound": "off"
+	},
+	"accessibility.signals.chatResponsePending": {
+		"sound": "auto"
+	},
+	"accessibility.signals.clear": {
+		"sound": "off"
+	},
+	"accessibility.signals.save": {
+		"announcement": "always",
+		"sound": "never"
+	},
+	"accessibility.signals.format": {
+		"announcement": "always",
+		"sound": "never"
+	},
+	"accessibility.signals.terminalBell": {
+		"sound": "off"
+	},
+	"terminal.integrated.enableVisualBell": false,
 
 }
